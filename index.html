@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>React</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-transition="zoom">
+				<h1>React</h1>
+			</section>
+
+			<section>
+				<ul>
+					<li class="fragment">What is React</li>
+					<li class="fragment">Why you should use React</li>
+					<li class="fragment">Virtual DOM</li>
+					<li class="fragment">React Components</li>
+					<li class="fragment">JSX</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>What is React</h2>
+				<p class="fragment">The library for web and native user interfaces</p>
+			</section>
+
+			<section>
+				<h2>Why you should use React</h2>
+				<ul>
+					<li class="fragment">Declarative</li>
+					<li class="fragment">Performance</li>
+					<li class="fragment">Сomponent Approach</li>
+				</ul>
+			</section>
+
+			<section>
+				<section>
+					<h2>Virtual DOM</h2>
+					<img src="./assets/virtual-dom-1.gif" alt="">
+				</section>
+				<section>
+					<h2>Virtual DOM</h2>
+					<img src="./assets/virtual-dom-2.gif" alt="">
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>React Components</h2>
+					<pre><code>
+&lt;PageLayout&gt;
+&lt;NavigationHeader&gt;
+	&lt;SearchBar /&gt;
+	&lt;Link to="/docs"&gt;Docs&lt;/Link&gt;
+&lt;/NavigationHeader&gt;
+&lt;Sidebar /&gt;
+&lt;PageContent&gt;
+	&lt;TableOfContents /&gt;
+	&lt;DocumentationText /&gt;
+&lt;/PageContent&gt;
+&lt;/PageLayout&gt;
+					</code></pre>
+				</section>
+
+				<section>
+					<pre><code>
+function Profile() {
+	return (
+		&lt;img src="KatherineJohnson.jpg" alt="Katherine Johnson"/&gt;
+	);
+}
+export default function Gallery() {
+	return (
+		&lt;section&gt;
+			&lt;h1&gt;Amazing scientists&lt;/h1&gt;
+			&lt;Profile /&gt;
+			&lt;Profile /&gt;
+			&lt;Profile /&gt;
+		&lt;/section&gt;
+	);
+}
+					</code></pre>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h2>JSX</h2>
+
+					<pre class="fragment"><code>
+&lt;h1&gt;Hedy Lamarr's Todos&lt;/h1&gt;
+&lt;img src="HedyLamarr.jpg" alt="Hedy Lamarr" class="photo"&gt;
+&lt;ul&gt;
+	&lt;li&gt;Invent new traffic lights
+	&lt;li&gt;Rehearse a movie scene
+	&lt;li&gt;Improve the spectrum technology
+&lt;/ul&gt;
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>1. Return a single root element</h3>
+					<pre class="fragment"><code>
+&lt;div&gt;
+	&lt;h1&gt;Hedy Lamarr's Todos&lt;/h1&gt;
+	&lt;img src="HedyLamarr.jpg" alt="Hedy Lamarr" class="photo" &gt;
+	&lt;ul&gt;
+		...
+	&lt;/ul&gt;
+&lt;/div&gt;
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>2. Close all the tags</h3>
+					<pre class="fragment"><code>
+&lt;div&gt;
+	&lt;img src="HedyLamarr.jpg" alt="Hedy Lamarr" class="photo"/&gt;
+	&lt;ul&gt;
+		&lt;li&gt;Invent new traffic lights&lt;/li&gt;
+		&lt;li&gt;Rehearse a movie scene&lt;/li&gt;
+		&lt;li&gt;Improve the spectrum technology&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>3. Write HTML attributes in camelCase</h3>
+					<p>stroke-width -> strokeWidth</p>
+					<p>class -> className</p>
+					<p>data-name -> data-name</p>
+				</section>
+
+				<section>
+					<h3>3. Write HTML attributes in camelCase</h3>
+					<pre><code>
+export default function TodoList() {
+	return (
+		&lt;div&gt;
+			&lt;h1&gt;Hedy Lamarr's Todos&lt;/h1&gt;
+			&lt;img src="HedyLamarr.jpg" alt="Hedy Lamarr" className="photo" /&gt;
+			&lt;ul&gt;
+				&lt;li&gt;Invent new traffic lights&lt;/li&gt;
+				&lt;li&gt;Rehearse a movie scene&lt;/li&gt;
+				&lt;li&gt;Improve the spectrum technology&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+	);
+}
+					</code></pre>
+				</section>
+
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
